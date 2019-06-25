@@ -1,6 +1,6 @@
 const Router = require('koa-router')
 const router = new Router({
-  prefix: '/v1/book'
+  prefix: '/api/v1/book'
 })
 const {Auth} = require('../../../middlewares/auth')
 const {HotBook} = require('../../models/hot_book')

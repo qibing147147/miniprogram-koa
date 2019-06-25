@@ -1,6 +1,6 @@
 const Router = require('koa-router')
 const router = new Router({
-  prefix: '/v1/token'
+  prefix: '/api/v1/token'
 })
 const {TokenValidator, NotEmptyValidator} = require('../../validators/validator')
 const {User} = require('../../models/user')

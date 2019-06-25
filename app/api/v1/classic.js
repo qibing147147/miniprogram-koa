@@ -1,6 +1,6 @@
 const Router = require('koa-router')
 const router = new Router({
-  prefix: '/v1/classic'
+  prefix: '/api/v1/classic'
 })
 // const {HttpException, ParameterException} = require('../../../core/http-exception')
 const {PositiveIntegerValidator, ClassicLikeValidator} = require('../../validators/validator')
