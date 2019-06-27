@@ -1,6 +1,6 @@
 const Router = require('koa-router')
 const router = new Router({
-  prefix: '/api/v1/book'
+  prefix: '/v1/book'
 })
 const {Auth} = require('../../../middlewares/auth')
 const {HotBook} = require('../../models/hot_book')
@@ -60,7 +60,12 @@ router.get('/:book_id/short_comment', new Auth().m, async ctx => {
   const v = await new PositiveIntegerValidator().validate(ctx, {
     id: 'book_id'
   })
-  ctx.body = await Comment.getComments(v.get('path.book_id'))
+  const book_id = v.get('path.book_id')
+  const comments = await Comment.getComments(book_id)
+  ctx.body = {
+    book_id,
+    comments
+  }
   
 })
 

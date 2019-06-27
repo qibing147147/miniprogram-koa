@@ -23,7 +23,7 @@ class InitManager {
     
     function whenLoadModule(obj) {
       if (obj instanceof Router) {
-        InitManager.app.use(obj.routes())
+        InitManager.app.use(obj.prefix('/api').routes())
       }
     }
   }

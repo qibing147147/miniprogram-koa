@@ -81,9 +81,11 @@ class Favor extends Model {
       }
     })
     const myFavor = await Favor.findOne({
-      art_id: bookId,
-      uid,
-      type: 400
+      where: {
+        art_id: bookId,
+        uid,
+        type: 400
+      }
     })
     return {
       fav_nums: favorNums,
